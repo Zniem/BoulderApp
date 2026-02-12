@@ -1,5 +1,5 @@
-*{
-  background: green;
+.div_test{
+  display:flex;
+  flex-direction: horizontal;
+  flex-wrap:wrap;
 }
-
-/*Test for git

@@ -1,0 +1,14 @@
+.card_container{
+  width:15rem;
+  background: grey;
+  border-radius: 1rem;
+  box-shadow: 0px 10px 8px #999;
+  
+  margin: 0.5rem;
+}
+
+.card_image{
+    width:15rem;
+    border-radius: 1rem;
+
+}
