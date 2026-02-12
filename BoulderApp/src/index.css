@@ -1,3 +1,13 @@
+*{
+  color:white;
+  font-family:sans-serif;
+  
+}
+body{
+  background:gray;
+
+}
+
 .div_test{
   display:flex;
   flex-direction: horizontal;
