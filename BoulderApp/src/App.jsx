@@ -6,10 +6,10 @@ function App() {
     <TopNavBar></TopNavBar>
     <div className="div_test">
       
-  <RouteCard></RouteCard>
-  <RouteCard></RouteCard>
-  <RouteCard></RouteCard>
-  <RouteCard></RouteCard>
+    <RouteCard></RouteCard>
+    <RouteCard></RouteCard>
+    <RouteCard></RouteCard>
+    <RouteCard></RouteCard>
   </div>
   </>
   );

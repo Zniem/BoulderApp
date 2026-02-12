@@ -1,5 +1,6 @@
 .card_container{
-  width:15rem;
+  width: 32rem;
+  height: 40rem;
   background: grey;
   border-radius: 1rem;
   box-shadow: 0px 10px 8px #999;
@@ -8,7 +9,8 @@
 }
 
 .card_image{
-    width:15rem;
+    width:32rem;
+    height: 24rem;
     border-radius: 1rem;
 
 }

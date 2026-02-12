@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+
+}
+
+.top_bar{
+    background: gray;
+    overflow: hidden;
+    
+}
+
+.top_bar a{
+    padding: 16px;
+
+}
+.right_side{
+    text-align:right;
+}
