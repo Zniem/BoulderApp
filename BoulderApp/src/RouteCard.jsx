@@ -1,14 +1,17 @@
+import {Link} from "react-router-dom";
 import './routecard.css'
-function RouteCard(){
+
+function RouteCard(props){
     return(
         <div className="card_container">
             <img className="card_image" src="https://picsum.photos/seed/picsum/512/500" alt="Photo of route"></img>
-            <h1>Card Title</h1>
-            <p>This is the card description Please add more information to this</p>
-            <a href="cardPage">Route in detail</a>
+            <h1>{props.name}</h1>
+            <p>Grade: {props.grade}</p>
+            <Link to={`/details/${props.id}`}>
+                <a>Route in detail</a>
+            </Link>
         </div>
     );
-
 }
 
 export default RouteCard

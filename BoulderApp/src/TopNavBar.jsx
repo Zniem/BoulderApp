@@ -1,4 +1,5 @@
 import "./topNavBar.css"
+
 function TopNavBar(){
     return(
         <div className="top_bar">
@@ -11,6 +12,6 @@ function TopNavBar(){
             </div>
         </div>
     );
-
 }
+
 export default TopNavBar
