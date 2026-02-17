@@ -8,6 +8,7 @@ function TopNavBar(){
             <h2>Boulder app</h2>
             <div className="right_side">
             <Link to={`/`}>Home</Link>
+            <Link to={`/dashboard`}>Dashboard</Link>
             <Link to={`/climbed`}>Climbed</Link>
             <Link to={`/loginPage`}>Log In</Link>
             </div>
