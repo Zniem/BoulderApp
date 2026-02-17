@@ -7,7 +7,8 @@ function RouteCard(props){
             <img className="card_image" src="https://picsum.photos/seed/picsum/512/500" alt="Photo of route"></img>
             <h1>{props.name}</h1>
             <p>Grade: {props.grade}</p>
-            <Link to={`/details/${props.id}`}>
+            <Link to={`/details/${props.id}`}
+                state={{description: props.description}}>
                 <a>Route in detail</a>
             </Link>
         </div>
