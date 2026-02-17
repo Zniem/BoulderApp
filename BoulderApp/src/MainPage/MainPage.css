@@ -4,16 +4,18 @@
     justify-content:center;
     align-items:center;
     height:calc(100vh - 60px);
+    
 }
 
 .central_text h1{
     font-size:60px;
-
+    margin:20px;
 }
 
 .central_text p{
     font-size:20px;
-
+    width:600px;
+    text-align:center;
 }
 
 .buttons{
@@ -22,11 +24,10 @@
 }
 
 .buttons a{
+    padding:12px 28px;
     background-color:#2c2c2c;
     display:inline-block;
     text-decoration:none;
-    height:30px;
-    width:100px;
 }
 .buttons a:hover{
     background-color:#222;
