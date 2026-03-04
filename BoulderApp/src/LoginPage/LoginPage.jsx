@@ -1,16 +1,57 @@
 import {useState} from "react"
 import supabase from "./supabaseClient.js"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
+
+import "./LoginPage.css"
 
 function LoginPage(){
+    const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [message, setMessage] = useState("");
+    
+    const handleSubmit = async (event) =>{
+        event.preventDefault();
+        setMessage("");
 
+        const {data,error} = await supabase.auth.signInWithPassword({
+            email: email,
+            password: password,
+        });
+
+        if(error){
+            setMessage(error.message);
+            setEmail("");
+            setPassword("");
+            return;
+        }
+
+        if(data){
+            navigate("/dashboard");
+            return null;
+        }
+    }
     return(
-        <>
+        <div className="loginForm">
         <h1>This is the login page</h1>
-        <textarea placeholder="Username"></textarea>
-        <textarea placeholder="Password"></textarea>
-        <button>Login</button>
-        </>
+        <br></br>
+        {message && <span>{message}</span>}
+        <form onSubmit={handleSubmit}>
+            <input 
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            type="email" placeholder="Email"
+            required/>
+            <input 
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            type="password" placeholder="Password"
+            required/>
+            <button type="submit">Log in</button>
+        </form>
+        <span>Dont have an account yet?</span>
+        <Link to="/registerPage">Register</Link>
+        </div>
     );
 }
 

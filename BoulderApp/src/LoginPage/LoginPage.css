@@ -1,28 +1,27 @@
-.registerForm{
+.loginForm{
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     height:calc(100vh - 60px);
 }
-.registerForm h1{
+.loginForm h1{
     font-size:60px;
     margin:20px;
 }
 
-.registerForm p{
+.loginForm p{
     font-size:20px;
     width:600px;
     text-align:center;
 }
 
-.registerForm input{
+.loginForm input{
     color:black;
-    margin: 10px;
 
 }
 
-.registerForm button{
-    
+.loginForm button{
+    color:green;
     
 }
