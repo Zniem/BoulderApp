@@ -6,7 +6,7 @@ const supabase = createClient(
     import.meta.env.VITE_SUPABASE_URL,import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
 );
 
-function MainPage(){
+function DashboardPage(){
     const [climbingRoutes, setClimbingRoutes] = useState([]);
 
     useEffect(()=>{
@@ -20,6 +20,7 @@ function MainPage(){
 
     return(
     <>
+    <h1>User Dashboard</h1>
         <ul  className="div_test">
             {climbingRoutes.map((climbingRoute) => (
                 <RouteCard id={climbingRoute.id} name={climbingRoute.routeName} grade={climbingRoute.grade} description={climbingRoute.description}></RouteCard>
@@ -29,4 +30,4 @@ function MainPage(){
     );
 }
 
-export default MainPage
+export default DashboardPage

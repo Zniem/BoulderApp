@@ -12,6 +12,7 @@ function TopNavBar(){
             <Link to={`/climbed`}>Climbed</Link>
             <Link to={`/loginPage`}>Log In</Link>
             <Link to={`/registerPage`}>Register</Link>
+            <Link to={`/adminDashboard`}>AdminDashboard</Link>
             </div>
         </div>
     );

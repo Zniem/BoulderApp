@@ -1,12 +1,13 @@
 import {createBrowserRouter, RouterProvider, Outlet} from "react-router-dom"
 
-import DashboardPage from "../DashboardPage/DashboardPage.jsx"
+import DashboardPage from "../DashboardPages/DashboardPage.jsx"
 import TopNavBar from "./TopNavBar.jsx"
-import RouteDetails from '../DashboardPage/RouteDetails.jsx'
+import RouteDetails from '../DashboardPages/RouteDetails.jsx'
 import LoginPage from '../LoginPage/LoginPage.jsx'
 import ClimbedPage from '../ClimbedPage/ClimbedPage.jsx'
 import MainPage from "../MainPage/MainPage.jsx"
 import RegisterPage from "../LoginPage/RegisterPage.jsx"
+import AdminDashboardPage from "../DashboardPages/AdminDashboardPage.jsx"
 
 //layout function for the browser router otherwhise it doesnt work
 function Layout(){
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
     children:[
   {index:true,element:<MainPage/>},
   {path:"/dashboard",element:<DashboardPage/>},
+  {path:"/adminDashboard",element:<AdminDashboardPage/>},
   {path:"/details/:id",element:<RouteDetails/>},
   {path:"/loginPage",element:<LoginPage/>},
   {path:"/registerPage",element:<RegisterPage/>},
