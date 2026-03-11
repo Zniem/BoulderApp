@@ -8,6 +8,7 @@ import ClimbedPage from '../ClimbedPage/ClimbedPage.jsx'
 import MainPage from "../MainPage/MainPage.jsx"
 import RegisterPage from "../LoginPage/RegisterPage.jsx"
 import AdminDashboardPage from "../DashboardPages/AdminDashboardPage.jsx"
+import ProfilePage from "../ProfilePage/ProfilePage.jsx"
 
 //layout function for the browser router otherwhise it doesnt work
 function Layout(){
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
   {path:"/loginPage",element:<LoginPage/>},
   {path:"/registerPage",element:<RegisterPage/>},
   {path:"/climbed",element:<ClimbedPage/>},
+  {path:"/profilePage",element:<ProfilePage/>},
     ],
   },
 ]);
