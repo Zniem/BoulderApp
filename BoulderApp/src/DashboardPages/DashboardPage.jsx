@@ -1,14 +1,11 @@
 import RouteCard from "./RouteCard.jsx"
-import {createClient} from "@supabase/supabase-js"
 import {useEffect, useState } from "react"
+import supabase from "../LoginPage/supabaseClient.js"
 
-const supabase = createClient(
-    import.meta.env.VITE_SUPABASE_URL,import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
-);
 
 function DashboardPage(){
     const [climbingRoutes, setClimbingRoutes] = useState([]);
-
+    
     useEffect(()=>{
         getClimbingRoutes();
     }, []);

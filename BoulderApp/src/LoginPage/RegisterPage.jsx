@@ -8,7 +8,12 @@ function RegisterPage(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
-    
+    const [isBoulderhal, setIsBoulderhal] = useState(false);
+
+    const handleChange = (e) => {
+        setIsBoulderhal(e.target.checked)
+    }
+
     const handleSubmit = async (event) =>{
         event.preventDefault();
         setMessage("");
@@ -16,6 +21,11 @@ function RegisterPage(){
         const {data,error} = await supabase.auth.signUp({
             email: email,
             password: password,
+            options:{
+                data:{
+                    boulderHal: isBoulderhal
+                },
+            },
         });
 
         if(error){
@@ -47,6 +57,16 @@ function RegisterPage(){
             value={password}
             type="password" placeholder="Password"
             required/>
+            <p>ben je een bouldrhal</p>
+            <label>boulderhal:
+                <input
+                    type="checkbox"
+                    name="boulderhal"
+                    checked={isBoulderhal}
+                    onChange={handleChange}
+                />
+
+            </label>
             <button type="submit">Create Account</button>
         </form>
         <span>Already have an account?</span>
