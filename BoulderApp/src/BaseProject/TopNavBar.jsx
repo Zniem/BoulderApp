@@ -7,23 +7,15 @@ import "./topNavBar.css"
 function TopNavBar(){
     const [metadata, setMetadata] = useState(null);
     
-    // useEffect(() => {
-    //     LoadMetadata();
-    // }, []);
+    useEffect(() => {
+        LoadMetadata();
+    }, []);
 
-    // async function LoadMetadata(){
-    //     const {data: {user}} = await supabase.auth.getUser();
-    //     if(user?.user_metadata.boulderHal === true){
-    //         setMetadata("true a maat");
-
-    //     }else if (user?.user_metadata.boulderHal === false){
-    //         setMetadata("false a mattie")
-    //     }else{
-    //         setMetadata("Niemand is logged in")
-
-    //     }
-        
+    async function LoadMetadata(){
+        const {data: {user}} = await supabase.auth.getUser();
+        setMetadata(user.email);
     }
+        
     async function LogOut(){
         const {error} = await supabase.auth.signOut();
         setMetadata(null);
@@ -39,8 +31,7 @@ function TopNavBar(){
             <Link to={`/loginPage`}>Log In</Link>
             <Link to={`/registerPage`}>Register</Link>
             <Link to={`/adminDashboard`}>AdminDashboard</Link>
-            <Link to={`/adminDashboard`}>{metadata}</Link>
-            <button onClick={LoadMetadata}>Laad</button>
+            <Link>{metadata}</Link>
             <button onClick={LogOut}>log uit</button>
             </div>
         </div>

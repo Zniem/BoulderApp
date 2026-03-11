@@ -30,9 +30,10 @@ function LoginPage(){
             const {data: {user}} = await supabase.auth.getUser();
                 if(user?.user_metadata.boulderHal === true){
                     navigate("/adminDashboard");
-
+                    location.reload(true);
                 }else if (user?.user_metadata.boulderHal === false){
                     navigate("/dashboard");
+                    location.reload(true);
                 return null;
         }
     }
