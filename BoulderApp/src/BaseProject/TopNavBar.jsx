@@ -11,17 +11,17 @@ function TopNavBar(){
     //     LoadMetadata();
     // }, []);
 
-    async function LoadMetadata(){
-        const {data: {user}} = await supabase.auth.getUser();
-        if(user?.user_metadata.boulderHal === true){
-            setMetadata("true a maat");
+    // async function LoadMetadata(){
+    //     const {data: {user}} = await supabase.auth.getUser();
+    //     if(user?.user_metadata.boulderHal === true){
+    //         setMetadata("true a maat");
 
-        }else if (user?.user_metadata.boulderHal === false){
-            setMetadata("false a mattie")
-        }else{
-            setMetadata("Niemand is logged in")
+    //     }else if (user?.user_metadata.boulderHal === false){
+    //         setMetadata("false a mattie")
+    //     }else{
+    //         setMetadata("Niemand is logged in")
 
-        }
+    //     }
         
     }
     async function LogOut(){

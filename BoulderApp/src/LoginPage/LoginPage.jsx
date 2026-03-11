@@ -27,9 +27,15 @@ function LoginPage(){
         }
 
         if(data){
-            navigate("/dashboard");
-            return null;
+            const {data: {user}} = await supabase.auth.getUser();
+                if(user?.user_metadata.boulderHal === true){
+                    navigate("/adminDashboard");
+
+                }else if (user?.user_metadata.boulderHal === false){
+                    navigate("/dashboard");
+                return null;
         }
+    }
     }
     return(
         <div className="loginForm">
