@@ -4,13 +4,14 @@ import './routecard.css'
 function RouteCard(props){
     return(
         <div className="card_container">
-            <img className="card_image" src="https://picsum.photos/seed/picsum/512/500" alt="Photo of route"></img>
             <h1>{props.name}</h1>
             <p>Grade: {props.grade}</p>
             <Link to={`/details/${props.id}`}
                 state={{description: props.description}}>
-                <a>Route in detail</a>
+                Route in detail
             </Link>
+            <br></br>
+            <button>Like the route</button>
         </div>
     );
 }

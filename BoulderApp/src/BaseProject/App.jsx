@@ -10,7 +10,7 @@ import RegisterPage from "../LoginPage/RegisterPage.jsx"
 import AdminDashboardPage from "../DashboardPages/AdminDashboardPage.jsx"
 import ProfilePage from "../ProfilePage/ProfilePage.jsx"
 
-//layout function for the browser router otherwhise it doesnt work
+//Layout function for the browser router otherwhise it doesnt work
 function Layout(){
   return(
     <>
@@ -18,10 +18,9 @@ function Layout(){
       <Outlet/>
     </>
   );
-
 }
 
-//routing the app
+//Routing the app
 const router = createBrowserRouter([
   {
     path:"/",
@@ -31,15 +30,15 @@ const router = createBrowserRouter([
   {path:"/dashboard",element:<DashboardPage/>},
   {path:"/adminDashboard",element:<AdminDashboardPage/>},
   {path:"/details/:id",element:<RouteDetails/>},
-  {path:"/loginPage",element:<LoginPage/>},
-  {path:"/registerPage",element:<RegisterPage/>},
   {path:"/climbed",element:<ClimbedPage/>},
   {path:"/profilePage",element:<ProfilePage/>},
+  {path:"/loginPage",element:<LoginPage/>},
+  {path:"/registerPage",element:<RegisterPage/>},
     ],
   },
 ]);
 
-//main app function
+//Main app function
 function App() {
   return(
     <>

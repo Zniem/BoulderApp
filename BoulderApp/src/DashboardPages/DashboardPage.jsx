@@ -2,6 +2,7 @@ import RouteCard from "./RouteCard.jsx"
 import {useEffect, useState } from "react"
 import supabase from "../LoginPage/supabaseClient.js"
 
+import "./dashboardpage.css"
 
 function DashboardPage(){
     const [climbingRoutes, setClimbingRoutes] = useState([]);
@@ -18,7 +19,7 @@ function DashboardPage(){
     return(
     <>
     <h1>User Dashboard</h1>
-        <ul  className="div_test">
+        <ul className="routes">
             {climbingRoutes.map((climbingRoute) => (
                 <RouteCard id={climbingRoute.id} name={climbingRoute.routeName} grade={climbingRoute.grade} description={climbingRoute.description}></RouteCard>
             ))}

@@ -6,6 +6,7 @@ import "./topNavBar.css"
 
 function TopNavBar(){
     const navigate = useNavigate();
+
     const [metadata, setMetadata] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isBoulderhal, setIsBoulderhal] = useState(false);
@@ -15,14 +16,13 @@ function TopNavBar(){
     }, []);
 
 
-     async function isActiveSession(){
+    async function isActiveSession(){
         const {data: {session}} = await supabase.auth.getSession();
-        if(session){
-            setIsLoggedIn(true);
-            setMetadata(session.user.email);
-            setIsBoulderhal(session.user.user_metadata.boulderHal);
-        }
-        
+            if(session){
+                setIsLoggedIn(true);
+                setMetadata(session.user.email);
+                setIsBoulderhal(session.user.user_metadata.boulderHal);
+            }    
     }
         
     async function LogOut(){

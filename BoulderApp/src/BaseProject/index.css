@@ -7,9 +7,3 @@
 body{
   background:linear-gradient(135deg, #1e1e1e, #2c2c2c);
 }
-
-.div_test{
-  display:flex;
-  flex-direction: horizontal;
-  flex-wrap:wrap;
-}
