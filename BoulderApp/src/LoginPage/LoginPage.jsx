@@ -43,7 +43,7 @@ function LoginPage(){
         <h1>This is the login page</h1>
         <br></br>
         {message && <span>{message}</span>}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="formDiv">
             <input 
             onChange={(e) => setEmail(e.target.value)}
             value={email}

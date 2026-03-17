@@ -43,20 +43,22 @@ function RegisterPage(){
 
     return(
         <div className="registerForm">
-        <h1>This is the register page</h1>
+        <h1>Register page</h1>
         <br></br>
         {message && <span>{message}</span>}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="formDiv">
             <input 
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             type="email" placeholder="Email"
             required/>
+            <br/>
             <input 
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             type="password" placeholder="Password"
             required/>
+             <br/>
             <p>ben je een bouldrhal</p>
             <label>boulderhal:
                 <input
@@ -67,9 +69,10 @@ function RegisterPage(){
                 />
 
             </label>
+             <br/>
             <button type="submit">Create Account</button>
         </form>
-        <span>Already have an account?</span>
+        <p>Already have an account?</p>
         <Link to="/loginPage">Login</Link>
         </div>
     );

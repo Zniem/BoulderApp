@@ -5,19 +5,30 @@
     align-items:center;
     height:calc(100vh - 60px);
 }
+
+.formDiv{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
 .registerForm h1{
     font-size:60px;
-    margin:20px;
+    margin:10px;
 }
 
 .registerForm p{
     font-size:20px;
     width:600px;
     text-align:center;
+    padding:0;
+    margin:2px;
 }
 
 .registerForm input{
     color:black;
-    margin: 10px;
-
+    margin: 1px;
+}
+.registerForm button{
+    color:black;
 }

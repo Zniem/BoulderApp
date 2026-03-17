@@ -29,6 +29,9 @@ body{
     color: white;
     margin: 0;
 }
+.top_bar button{
+    color:black;
+}
 
 .right_side{
     display:flex;
