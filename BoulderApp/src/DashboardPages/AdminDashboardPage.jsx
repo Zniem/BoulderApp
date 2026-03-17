@@ -1,6 +1,8 @@
 import RouteCard from "./RouteCard.jsx"
 import {createClient} from "@supabase/supabase-js"
 import {useEffect, useState } from "react"
+//todo
+// import supabase from "../Supabase/supabaseClient.js"
 
 const supabase = createClient(
     import.meta.env.VITE_SUPABASE_URL,import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY

@@ -1,6 +1,6 @@
 import RouteCard from "./RouteCard.jsx"
 import {useEffect, useState } from "react"
-import supabase from "../LoginPage/supabaseClient.js"
+import supabase from "../Supabase/supabaseClient.js"
 
 import "./dashboardpage.css"
 

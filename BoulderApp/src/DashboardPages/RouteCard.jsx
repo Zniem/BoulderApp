@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import './routecard.css'
-import supabase from "../LoginPage/supabaseClient.js"
+import supabase from "../Supabase/supabaseClient.js"
 
 
 function RouteCard(props){

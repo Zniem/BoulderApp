@@ -1,5 +1,5 @@
 import {useState} from "react"
-import supabase from "./supabaseClient.js"
+import supabase from "../Supabase/supabaseClient.js"
 import {Link} from "react-router-dom"
 
 import "./RegisterPage.css"

@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import supabase from "../LoginPage/supabaseClient.js"
+import supabase from "../Supabase/supabaseClient.js"
 
 function ClimbedPage(){
     const [climbingRoutes, setClimbingRoutes] = useState([]);

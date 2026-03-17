@@ -1,6 +1,6 @@
 import {Link, useNavigate} from "react-router-dom";
 import {useEffect, useState } from "react"
-import supabase from "../LoginPage/supabaseClient.js"
+import supabase from "../Supabase/supabaseClient.js"
 
 import "./topNavBar.css"
 
