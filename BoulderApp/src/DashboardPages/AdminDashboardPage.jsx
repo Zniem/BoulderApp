@@ -2,7 +2,7 @@ import RouteCard from "./RouteCard.jsx"
 import {useEffect, useState } from "react"
 import supabase from "../Supabase/supabaseClient.js"
 
-
+import "./AdminDashboardPage.css"
 
 function AdminDashboardPage(){
     const [climbingRoutes, setClimbingRoutes] = useState([]);
@@ -39,18 +39,18 @@ function AdminDashboardPage(){
     }
 
     return(
-    <>
+    <div className="admin_dashboard">
     <h1>Admin Dashboard page</h1>
     <input type="text" placeholder="name" value={newRouteName} onChange={(e) => setNewRouteName(e.target.value)}></input>
     <input type="text" placeholder="grade" value={newRouteGrade} onChange={(e) => setNewRouteGrade(e.target.value)}></input>
         <button onClick={addClimbingRoute}>Add route</button>
 
-        <ul  className="div_test">
+        <ul  className="routes">
             {climbingRoutes.map((climbingRoute) => (
                 <RouteCard id={climbingRoute.id} name={climbingRoute.routeName} grade={climbingRoute.grade} description={climbingRoute.description}></RouteCard>
             ))}
         </ul>  
-    </>
+    </div>
     );
 }
 
