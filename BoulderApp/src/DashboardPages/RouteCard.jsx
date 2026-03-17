@@ -1,17 +1,18 @@
 import {Link} from "react-router-dom";
 import './routecard.css'
 import supabase from "../Supabase/supabaseClient.js"
+import {getCurrentUserEmail} from "../Supabase/supabaseHelper.js"
 
 
 function RouteCard(props){
     const AddToLikeList = async (id) =>{
         const {data: likedData} = await  supabase.from("climbingRoutes").select("likedBy").eq("id", id).single();
-        const {data: {session}} = await supabase.auth.getSession();
+        const email = await getCurrentUserEmail();
 
         const currentLikes = likedData.likedBy ?? [];
-        if(currentLikes.includes(session.user.email)) return;
+        if(currentLikes.includes(email)) return;
 
-        const updatedLikes = [...currentLikes, session.user.email];
+        const updatedLikes = [...currentLikes, email];
 
 
         const {data, error} = await supabase.from("climbingRoutes").update({likedBy: updatedLikes}).eq("id", id);
