@@ -27,8 +27,22 @@
 
 .registerForm input{
     color:black;
-    margin: 1px;
+    padding:10px 12px;
+    margin:8px 0;
+    border-radius:6px;
+    font-size:14px;
 }
 .registerForm button{
-    color:black;
+    margin:10px;
+    padding:12px 28px;
+    background-color:#3c3c3c;
+    display:inline-block;
+    box-shadow:none;
+    text-decoration:none;
+    border:none;
+    font-size:16px;
+    border-radius:6px;
+}
+.registerForm button:hover{
+    background-color:#222;
 }

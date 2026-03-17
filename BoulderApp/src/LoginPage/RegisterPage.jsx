@@ -52,14 +52,11 @@ function RegisterPage(){
             value={email}
             type="email" placeholder="Email"
             required/>
-            <br/>
             <input 
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             type="password" placeholder="Password"
             required/>
-             <br/>
-            <p>ben je een bouldrhal</p>
             <label>boulderhal:
                 <input
                     type="checkbox"
@@ -69,7 +66,6 @@ function RegisterPage(){
                 />
 
             </label>
-             <br/>
             <button type="submit">Create Account</button>
         </form>
         <p>Already have an account?</p>

@@ -6,7 +6,6 @@ import supabase from "../Supabase/supabaseClient.js"
 
 function AdminDashboardPage(){
     const [climbingRoutes, setClimbingRoutes] = useState([]);
-    // const [newClimbingRoute, setNewClimbingRoute] = useState([]);
     const [newRouteName, setNewRouteName] = useState("");
     const [newRouteGrade, setNewRouteGrade] = useState("");
 
@@ -21,12 +20,12 @@ function AdminDashboardPage(){
         .insert([newRoute])
         .select();
         if(error){
-            console.log("Eroor adding todo: " + error);
+            console.log("Error adding route: " + error.message);
+            return;
         }else{
-            setClimbingRoutes((prev) => [...prev, data])
+            setClimbingRoutes((prev) => [...prev, ...data])
             setNewRouteName("");
             setNewRouteGrade("");
-            location.reload(true);
         }
 
     };  

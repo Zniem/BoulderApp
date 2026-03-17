@@ -40,7 +40,7 @@ function LoginPage(){
     }
     return(
         <div className="loginForm">
-        <h1>This is the login page</h1>
+        <h1>Login page</h1>
         <br></br>
         {message && <span>{message}</span>}
         <form onSubmit={handleSubmit} className="formDiv">
