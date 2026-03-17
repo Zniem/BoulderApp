@@ -1,3 +1,6 @@
+  .dashboard{
+    height:calc(100vh - 60px);
+  }
   .routes{
     width:100%;
     display:flex;
