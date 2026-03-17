@@ -8,11 +8,7 @@ function RegisterPage(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
-    const [isBoulderhal, setIsBoulderhal] = useState(false);
-
-    const handleChange = (e) => {
-        setIsBoulderhal(e.target.checked)
-    }
+    const [boulderHallName, setBoulderHallName] = useState("");
 
     const handleSubmit = async (event) =>{
         event.preventDefault();
@@ -23,7 +19,8 @@ function RegisterPage(){
             password: password,
             options:{
                 data:{
-                    boulderHal: isBoulderhal
+                    boulderHal: true,
+                    boulderHallName: boulderHallName
                 },
             },
         });
@@ -39,14 +36,20 @@ function RegisterPage(){
         
         setEmail("");
         setPassword("");
+        setBoulderHallName("");
     }
 
     return(
         <div className="registerForm">
-        <h1>Register page</h1>
+        <h1>Register page of Climbing hall</h1>
         <br></br>
         {message && <span>{message}</span>}
         <form onSubmit={handleSubmit} className="formDiv">
+            <input 
+            onChange={(e) => setBoulderHallName(e.target.value)}
+            value={boulderHallName}
+            type="boulderHallName" placeholder="Name of Boulder hall"
+            required/>
             <input 
             onChange={(e) => setEmail(e.target.value)}
             value={email}
@@ -59,8 +62,6 @@ function RegisterPage(){
             required/>
             <button type="submit">Create Account</button>
         </form>
-        <p>Want to register as a Bouldering hall?</p>
-        <Link to="/registerClimbingHallPage">Boulder hall register</Link>
         <p>Already have an account?</p>
         <Link to="/loginPage">Login</Link>
         </div>

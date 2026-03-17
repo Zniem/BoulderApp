@@ -8,12 +8,15 @@ function AdminDashboardPage(){
     const [climbingRoutes, setClimbingRoutes] = useState([]);
     const [newRouteName, setNewRouteName] = useState("");
     const [newRouteGrade, setNewRouteGrade] = useState("");
+    // const [boulderHallId, setBoulderHallId] = useState("");
 
 
     const addClimbingRoute = async () =>{
+        const hallId = await getBoulderHallId();
         const newRoute = {
             grade:newRouteGrade,
             routeName:newRouteName, 
+            BoulderHallId: hallId,
         };
         const {data, error} = await supabase
         .from("climbingRoutes")
@@ -33,6 +36,11 @@ function AdminDashboardPage(){
         getClimbingRoutes();
     }, []);
 
+    async function getBoulderHallId(){
+        const {data} = await supabase.auth.getSession();
+        return data.session.user.id;
+
+    }
     async function getClimbingRoutes() {
     const { data } = await supabase.from("climbingRoutes").select();
     setClimbingRoutes(data);
