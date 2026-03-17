@@ -5,15 +5,14 @@ import {Link} from "react-router-dom"
 import "./RegisterPage.css"
 
 function RegisterPage(){
+    //For making the user account
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    //For error messages
     const [message, setMessage] = useState("");
-    const [isBoulderhal, setIsBoulderhal] = useState(false);
 
-    const handleChange = (e) => {
-        setIsBoulderhal(e.target.checked)
-    }
-
+    // user signup
     const handleSubmit = async (event) =>{
         event.preventDefault();
         setMessage("");
@@ -21,14 +20,9 @@ function RegisterPage(){
         const {data,error} = await supabase.auth.signUp({
             email: email,
             password: password,
-            options:{
-                data:{
-                    boulderHal: isBoulderhal
-                },
-            },
         });
 
-        if(error){
+        if(error){ 
             setMessage(error.message);
             return;
         }
@@ -60,9 +54,9 @@ function RegisterPage(){
             <button type="submit">Create Account</button>
         </form>
         <p>Want to register as a Bouldering hall?</p>
-        <Link to="/registerClimbingHallPage">Boulder hall register</Link>
+            <Link to="/registerClimbingHallPage">Boulder hall register</Link>
         <p>Already have an account?</p>
-        <Link to="/loginPage">Login</Link>
+            <Link to="/loginPage">Login</Link>
         </div>
     );
 }

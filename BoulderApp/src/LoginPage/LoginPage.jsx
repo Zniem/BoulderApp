@@ -5,11 +5,17 @@ import {Link, useNavigate} from "react-router-dom"
 import "./LoginPage.css"
 
 function LoginPage(){
+    //navigation Constant
     const navigate = useNavigate();
+
+    //Login in user or boulder hall
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    //for errot messages
     const [message, setMessage] = useState("");
     
+    //Login things
     const handleSubmit = async (event) =>{
         event.preventDefault();
         setMessage("");
@@ -57,7 +63,7 @@ function LoginPage(){
             <button type="submit">Log in</button>
         </form>
         <span>Dont have an account yet?</span>
-        <Link to="/registerPage">Register</Link>
+            <Link to="/registerPage">Register</Link>
         </div>
     );
 }

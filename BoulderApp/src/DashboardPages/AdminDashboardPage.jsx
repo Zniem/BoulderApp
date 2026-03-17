@@ -8,8 +8,6 @@ function AdminDashboardPage(){
     const [climbingRoutes, setClimbingRoutes] = useState([]);
     const [newRouteName, setNewRouteName] = useState("");
     const [newRouteGrade, setNewRouteGrade] = useState("");
-    // const [boulderHallId, setBoulderHallId] = useState("");
-
 
     const addClimbingRoute = async () =>{
         const hallId = await getBoulderHallId();
