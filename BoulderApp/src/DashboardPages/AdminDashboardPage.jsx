@@ -16,8 +16,7 @@ function AdminDashboardPage(){
     const addClimbingRoute = async () =>{
         const newRoute = {
             grade:newRouteGrade,
-            routeName:newRouteName,
-            likedBy:["siem@gmail.com", "david@gmail.com"]    
+            routeName:newRouteName, 
         };
         const {data, error} = await supabase
         .from("climbingRoutes")
