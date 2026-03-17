@@ -4,12 +4,13 @@ import {useEffect, useState } from "react"
 import "./ProfilePage.css"
 function MainPage(){
     const [name, setName] = useState("");
+    const [dateSignUp, setDateSignUp] = useState("");
 
     useEffect(() => {
         const fetchUserData = async () => {
-            const data = await supabase.auth.getSession();
-            setName(data.data.session.user.email);
-
+            const session = await supabase.auth.getSession();
+            setName(session.data.session.user.email);
+            setDateSignUp(session.data.session.user.created_at);
         };
         fetchUserData();
     }, []);
@@ -20,7 +21,7 @@ function MainPage(){
             <h1>Profile page</h1>
             <p>Username: {name}</p>
             <p>Email: {name}</p>
-            <p>Aangemeld op: </p>
+            <p>Aangemeld op: {dateSignUp.toString().substring(0,10)}</p>
             <br></br>
             <p>Stats:</p>
             <p>Hoogst geklommen route:</p>

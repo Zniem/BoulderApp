@@ -40,7 +40,7 @@ function TopNavBar(){
             {!isLoggedIn && <Link to={`/loginPage`}>Log In</Link>}
             {!isLoggedIn && <Link to={`/registerPage`}>Register</Link>}
             {isLoggedIn && !isBoulderhal && <Link to={`/dashboard`}>Dashboard</Link>}
-            {isLoggedIn && isBoulderhal && <Link to={`/adminDashboard`}>AdminDashboard</Link>}
+            {isLoggedIn && isBoulderhal && <Link to={`/adminDashboard`}>Admin Dashboard</Link>}
             {isLoggedIn && !isBoulderhal && <Link to={`/climbed`}>Climbed</Link>}
             {isLoggedIn && <Link to="profilePage">{metadata}</Link>}
             {isLoggedIn && <button onClick={LogOut}>log uit</button>}

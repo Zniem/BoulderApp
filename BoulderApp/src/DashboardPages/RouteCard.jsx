@@ -82,7 +82,7 @@ const getLikedByUser = async () => {
     return(
         <div className="card_container">
             <h1>{props.name}</h1>
-            <p>Grade: {props.grade}</p>
+            <p>Grade: V{props.grade}</p>
             <Link to={`/details/${props.id}`}
                 state={{description: props.description}}>
                 Route in detail
